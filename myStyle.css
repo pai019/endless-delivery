@@ -1,0 +1,326 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Noto Sans KR", sans-serif;
+    background-color: rgb(57, 57, 57);
+    transition: filter 0.5s ease;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+section {
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.gif-container {
+    user-select: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+}
+
+.gif-container img {
+    max-width: 4%;
+    height: auto;
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out;
+    position: fixed;
+    top: 83%;
+}
+
+.title {
+    user-select: none;
+    text-align: center;
+    font-size: 3em;
+    font-weight: 500;
+    margin: 20px 0;
+    color: #fff;
+    position: absolute;
+    top: 44%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out;
+    z-index: 1;
+}
+
+body.scrolled .gif-container img {
+    opacity: 0;
+}
+
+.container {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: filter 1.5s ease-in-out;
+}
+
+.chat {
+    position: absolute;
+    height: 100vh;
+    left: 0;
+    width: 100vw;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transition: 0.5s ease-in-out;
+    overflow: hidden;
+    transform: translate(0, 50rem);
+}
+
+.box {
+    position: absolute;
+    height: 142vh;
+    width: 142vw;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transition: 0.35s ease;
+    transform: translate(0, -50rem) scale(1.18);
+}
+
+.case {
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    left: 0;
+    top: 0;
+    opacity: 0;
+    transition: 0.35s ease;
+    overflow: hidden;
+    transform: translate(0, -50rem) scale(1.18);
+    user-select: none;
+}
+
+.custom-img {
+    position: absolute;
+    width: auto;
+    height: auto;
+    max-width: 100vw;
+    max-height: 100vh;
+    object-fit: contain;
+}
+
+#case1 .custom-img {
+    width: 20%;
+    height: auto;
+    top: 72vh;
+    left: 70vw;
+    z-index: 4;
+}
+
+#case2 .custom-img {
+    width: 15%;
+    height: auto;
+    top: 24vh;
+    left: 34vw;
+    z-index: 3;
+}
+
+#case3 .custom-img {
+    width: 18%;
+    height: auto;
+    top: 20vh;
+    left: 68vw;
+    z-index: 2;
+}
+
+#case4 .custom-img {
+    width: 20%;
+    height: auto;
+    top: 60vh;
+    left: 20vw;
+    z-index: 1;
+}
+
+.custom-img:hover {
+    transform: rotate(5deg);
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+#case1 .custom-img:hover { transform: rotate(10deg); }
+#case2 .custom-img:hover { transform: rotate(15deg); }
+#case3 .custom-img:hover { transform: rotate(-13deg); }
+#case4 .custom-img:hover { transform: rotate(-13deg); }
+
+.show {
+    transform: none;
+    opacity: 1;
+}
+
+.overlay {
+    user-select: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 80%;
+    height: 80%;
+    background-color: rgba(0, 0, 0, 0.8);
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0px 30px;
+    border-radius: 15px;
+    z-index: 10;
+    overflow: auto;
+    
+}
+
+.overlay-title-text {
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+.overlay-subtitle-text {
+    color: white;
+    font-size: 23px;
+    font-weight: 500;
+    text-align: center;
+    margin: 8px 0 0;
+}
+
+.overlay-text {
+    color: #cdcccc;
+    font-size: 17px;
+    text-align: center;
+    margin-top: 40px;
+}
+
+.link-icon {
+    width: 16px;
+    height: 16px;
+    margin-right: 5px;
+}
+
+.overlay-source {
+    font-size: 12px;
+    color: rgb(200, 200, 200);
+    position: absolute;
+    bottom: 27px;
+    left: 75px;
+    width: auto;
+    text-align: left;
+}
+
+.close-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 50px;
+    height: auto;
+    cursor: pointer;
+}
+
+.link-btn {
+    position: absolute;
+    bottom: 20px;
+    left: 30px;
+    width: 35px;
+    height: auto;
+    cursor: pointer;
+}
+
+.pageupimage {
+    position: fixed;
+    width: 4%;
+    height: auto;
+    right: 5.6%;
+    bottom: 2%;
+}
+
+.pageupimage:hover {
+    content: url('img/pageup_hover.png');
+}
+
+
+.disabled {
+    pointer-events: none; /* 모든 포인터 이벤트 비활성화 */
+
+}
+
+.animated-text {
+    user-select: none;
+    white-space: nowrap;
+    text-align: center;
+    font-size: 3em;
+    font-weight: 500;
+    margin: 0;
+    color: #fff;
+    position: absolute;
+    top: 47%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: opacity 0.7s ease-in-out;
+    z-index: 1;
+}
+
+.first{
+    font-weight: 700;
+    color: rgb(234, 0, 0);
+
+}
+
+
+.footer {
+    opacity: 0;
+    transition: opacity 0.7s ease-in-out; /* 애니메이션 부드럽게 */
+    font-size: 1.5rem; /* 필요에 따라 조정 */
+    color: rgb(200, 200, 200);
+}
+
+.animated-text.show {
+    opacity: 1;
+}
+
+.animated-text:first-child {
+    animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+
+.container::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000000;;
+    opacity: var(--overlay-opacity, 0); /* 기본 투명도 */
+    pointer-events: none;
+    z-index: 100;
+    transition: opacity 1.5s ease-in-out;
+}
